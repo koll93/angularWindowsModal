@@ -1,0 +1,48 @@
+
+<app-window-modal [id]="'id1'" [widthWindow]='300' [heightWindow]='300' (onClose)='eventClose($event)'
+                  [leftDistance]='10' [topDistance]='10' [titleName]="'titleName'"
+                  [colorTitle]="'#19faff'" [colorMinimizeButton]="'white'" [colorCloseButton]="'#1e90ff'"
+                  [isDeleteMinimizeButton]="false" [isMove]="false"><ng-template #flag>
+
+  <p>контент первой страницы №1</p>
+  <p>контент первой страницы №2</p>
+  <p>контент первой страницы №3</p>
+
+</ng-template></app-window-modal>
+
+
+<app-window-modal [id]="'id2'" [widthWindow]='500' [heightWindow]='500'
+                  [leftDistance]='350' [topDistance]='10' [titleName]="'titleName'"
+                  [colorTitle]="'#19faff'" [colorMinimizeButton]="'white'" [colorCloseButton]="'#1e90ff'"
+                  [isDeleteMinimizeButton]='true' [isMove]="true"><ng-template #flag>
+  <p>контент первой страницы №1</p>
+  <p>контент первой страницы №2</p>
+  <p>контент первой страницы №3</p>
+
+</ng-template></app-window-modal>
+
+
+<app-window-modal [id]="'id3'" [widthWindow]='300' [heightWindow]='300'
+                   [leftDistance]='900' [topDistance]='10' [titleName]="'titleName'"
+                  [colorTitle]="'#19faff'" [colorMinimizeButton]="'white'" [colorCloseButton]="'#1e90ff'"
+                  [isDeleteMinimizeButton]="false" [isMove]="true"><ng-template #flag></ng-template></app-window-modal>
+
+<button (click)='toggle()'>click</button>
+
+<ng-container *ngIf='flagWindow'>
+<app-window-modal [id]="'id4'" [widthWindow]='300' [heightWindow]='300'
+                    [leftDistance]='500' [topDistance]='40' [titleName]="'titleName'"
+                    [colorTitle]="'#19faff'" [colorMinimizeButton]="'white'" [colorCloseButton]="'#1e90ff'"
+                    [isDeleteMinimizeButton]="false" [isMove]="true"><ng-template #flag>окно</ng-template></app-window-modal>
+</ng-container>
+
+
+
+<input type="button" (click)='fl = !fl' value="Click">
+
+<ng-container *ngIf='fl'>
+  <app-window-modal [id]="'id5'" [widthWindow]='300' [heightWindow]='300'
+                    [leftDistance]='500' [topDistance]='40' [titleName]="'titleName'"
+                    [colorTitle]="'#19faff'" [colorMinimizeButton]="'white'" [colorCloseButton]="'#1e90ff'"
+                    [isDeleteMinimizeButton]="false" [isMove]="true"><ng-template #flag>окно</ng-template></app-window-modal>
+</ng-container>
